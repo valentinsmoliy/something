@@ -1,1 +1,1 @@
-svn log -v --xml | grep '<date.*/date>' | grep -oE '>[0-9]{4}' | tr -d '>' | sort $* | uniq -c | sort -k2 -n -r
+svn log -v --xml | grep '<date.*/date>' | grep -oE '>[0-9]{4}' | tr -d '>' | sort $* | uniq -c | sort -k2 -n -r | awk '{ print $2 " " $1}'
